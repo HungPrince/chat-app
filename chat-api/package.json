@@ -1,0 +1,25 @@
+{
+  "name": "rest-api",
+  "version": "0.0.1",
+  "description": "This Rest API for MY Angular2 Projects.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rest",
+    "api"
+  ],
+  "author": "Shashank Tiwari",
+  "license": "MIT",
+  "dependencies": {
+    "@ionic-native/camera": "^4.3.1",
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.14.0",
+    "express-fileupload": "^0.3.0",
+    "mongodb": "^2.2.33",
+    "socket.io": "^1.7.4"
+  }
+}
