@@ -1,0 +1,25 @@
+<div class="user-list-wrapper">
+	<ul *ngIf="usersToChat.length !== 0" class="new-user-list">
+	
+		<li *ngFor="let user of usersToChat"
+			(click)="selectToChat(user)">
+			<div class="new-chat-username">
+				{{user.username}}				
+				<span *ngIf="user.online=='Y'" class="online-user" title="Online"></span>
+				<span *ngIf="user.online=='N'" class="offline-user" title="Offline"></span>
+			</div>
+			<div class="new-chat-textbox" [class.new-chat-textbox-seleted]="selectedUserToChat(user._id)">
+				<br>
+				<textarea class="form-control" [(ngModel)]="message" placeholder="Write something here"></textarea>
+				<br>
+				<button class="btn btn-primary" (click)="sendNewMessage()">Send</button>
+			</div>
+
+		</li>
+	</ul>
+
+	<div *ngIf="usersToChat.length === 0" 
+		class="alert alert-info text-center">
+		<strong> No new user to chat. </strong>
+	</div>
+</div>

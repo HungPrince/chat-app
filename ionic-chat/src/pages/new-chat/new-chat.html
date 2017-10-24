@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat to {{user.username}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="page-inner">
+    <ion-item *ngFor="let message of messages">
+      <ion-avatar item-start>
+        <img src="img/my-avatar.png">
+      </ion-avatar>
+      <p>{{message.message}}</p>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item>
+      <ion-label color="primary" stacked>Enter your message</ion-label>
+      <ion-textarea 
+      placeholder="Enter a description" 
+      [(ngModel)]="message" 
+			(keyup)="sendMessage($event)"></ion-textarea>
+    </ion-item>
+  </div>
+</ion-content>

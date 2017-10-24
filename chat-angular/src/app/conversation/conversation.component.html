@@ -1,0 +1,27 @@
+<div class="massege-wrapper">
+	<div class="massege-container">
+
+		<div *ngIf="selectedUserName" 
+			class="opposite-user">
+			Chatting with {{selectedUserName}}
+		</div>
+
+		<ul class="message-thread">
+
+			<li *ngFor="let message of messages"
+				[class.align-right]="alignMessage(message.toUserId)"
+				>
+					{{ message.message}}
+			</li>
+		</ul>
+		
+	</div>
+	<div class="message-typer">
+		<textarea 
+			class="message form-control" 
+			placeholder="Type and hit Enter"
+			[(ngModel)]="message" 
+			(keyup)="sendMessage($event)"
+		></textarea>
+	</div>
+</div>

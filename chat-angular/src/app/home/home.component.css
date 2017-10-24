@@ -1,0 +1,31 @@
+/*style for all Home componet starts*/
+.header{
+	background-color: rgba(80, 208, 193, 0.51);
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.32);
+     margin-bottom: 20px;
+}
+
+.welcome-user{
+	padding: 25px;
+    color: #444444;
+}
+
+.welcome-user span{
+	font-size: 30px;
+}
+
+.home-navigation {
+	float: right;
+}
+
+.home-navigation ul{
+	display: inline-flex;
+    list-style-type: none;
+}
+.navigation li {
+    font-size: 20px;
+    margin:0px 0px 0px 20px;
+    cursor: pointer;
+}
+/*style for all Home componet ends*/

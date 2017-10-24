@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+
+    <form [formGroup]="formRegister" (ngSubmit)="register()">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-avatar item-start>
+                <img [src]="base64Image" *ngIf="base64Image" />
+                <img *ngIf="!base64Image" src="assets/img/avatar.png">
+              </ion-avatar>
+              <h2>avatar</h2>
+              <p><button (click)="getPicture()">Take a Picture</button></p>
+            </ion-item>
+
+            <ion-item>
+              <ion-input placeholder="Name" name="name" formControlName="username" type="text"></ion-input>
+
+            </ion-item>
+            <div *ngIf="formRegister.controls['username'].errors && (formRegister.controls['username'].dirty || formRegister.controls['username'].touched)">
+              <div [hidden]="!formRegister.controls['username'].errors.required" class="error">
+                Username is required field!
+              </div>
+              <div [hidden]="!formRegister.controls['username'].errors.minlength" class="error">
+                Username is least at 4 characters long!
+              </div>
+              <div [hidden]="!formRegister.controls['username'].errors.maxlength" class="error">
+                Username can not more than 24 characters!
+              </div>
+            </div>
+            <ion-item>
+              <ion-input placeholder="Email" name="email" formControlName="email" type="email"></ion-input>
+            </ion-item>
+            <div *ngIf="formRegister.controls['email'].errors && (formRegister.controls['email'].dirty || formRegister.controls['email'].touched)">
+              <div [hidden]="!formRegister.controls['email'].errors.required" class="error">
+                Email is required field!
+              </div>
+              <div [hidden]="!formRegister.controls['email'].errors.pattern" class="error">
+                Email incorrect format!
+              </div>
+            </div>
+            <ion-item>
+              <ion-input placeholder="Password" name="password" formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <div *ngIf="formRegister.controls['password'].errors && (formRegister.controls['password'].dirty || formRegister.controls['password'].touched)">
+              <div [hidden]="!formRegister.controls['password'].errors.required" class="error">
+                Username is required field!
+              </div>
+              <div [hidden]="!formRegister.controls['password'].errors.minlength" class="error">
+                Username is least at 6 characters long!
+              </div>
+              <div [hidden]="!formRegister.controls['password'].errors.maxlength" class="error">
+                Username can not more than 24 characters!
+              </div>
+            </div>
+          </ion-list>
+          <div *ngIf="submitted" [ngClass]="{'success':!classError,'error':classError}">{{message}}</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" [disabled]="formRegister.invalid" color="primary" full type="submit">Register</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,53 @@
+<!-- Loading overlay section starts -->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      	<div class="modal-header">
+	        	<h4 class="modal-title pull-left">Start a new Chat</h4>
+	        	<button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+	      	</div>
+	      	<div class="modal-body">
+	        	<app-new-chat (closeModel)="closeModel($event)"></app-new-chat>
+	      	</div>
+	    </div>
+  	</div>
+</div>
+
+<div class="home">
+	<!-- header section starts -->
+	<div class="header">
+		<div class="welcome-user">
+			<span>Hello {{username}}</span>
+			<div class="home-navigation">
+				<ul class="navigation">
+					<li (click)="getUsersToChat()" title="Add new chat">
+						<i class="fa fa-user-plus" aria-hidden="true"></i>
+					</li>
+					<li (click)="logout()" title="Logout">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>
+					</li>
+				</ul>
+			</div>
+		</div>		
+	</div>
+	<!-- header section ends -->
+
+	<div class="chat-body">
+
+		<!-- Messages section starts -->
+		<div class="col-md-8">
+			<app-conversation [conversation]="conversation" [selectedUserInfo]="selectedUserInfo"></app-conversation>
+		</div>
+		<!-- Messages section ends -->
+
+		<!-- User chat list section starts -->
+		<div class="col-md-4">
+			<app-chat-list [conversation]="conversation" [selectedUserInfo]="selectedUserInfo"></app-chat-list>
+		</div>
+		<!-- User chat list section ends -->
+
+	</div>
+
+</div>

@@ -1,0 +1,17 @@
+.app-screen{
+	background-color: #fff;
+}
+
+.login-screen{
+	margin: 70px 35px;
+	color: #000 !important;
+}
+
+.user-registration{
+	background-color: rgba(80, 208, 193, 0.51);
+}
+
+.submit-btn{
+	background-color: #fff;
+	color: #000;
+}

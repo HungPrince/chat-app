@@ -1,0 +1,15 @@
+<div class="user-list-wrapper">
+	<ul class="user-list">
+	
+		<!-- click event to handle the selection : selectedUser() -->
+		<!-- adding a class to indicate the selection -->
+		<li *ngFor="let user of chatListUsers"
+			(click)="selectedUser(user)" 
+			[class.selected-user]="isUserSelected(user._id)"
+			>
+				{{ user.username}}
+			<span *ngIf="user.online=='Y'" class="online-user" title="Online"></span>
+			<span *ngIf="user.online=='N'" class="offline-user" title="Offline"></span>
+		</li>
+	</ul>
+</div>

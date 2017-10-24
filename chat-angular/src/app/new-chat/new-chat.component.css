@@ -1,0 +1,52 @@
+.new-user-list{
+	padding: 10px;
+	overflow-y: scroll;
+	height: 423px;
+	width: 100%;
+    background-color: rgba(80, 208, 193, 0.51);
+}
+
+.new-user-list li{
+    background-color: rgba(255, 255, 255, 0.80);
+	padding: 20px;
+	list-style-type: none;
+	margin-bottom: 5px;
+    color: #444444;
+    width: 100% !important;
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px rgba(172, 172, 172, 0.73);
+    line-height: 1.4;;
+    border-color: solid 0.5px rgba(0, 0, 0, 0.32);
+    clear: both;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.new-chat-username{
+	font-size: 20px;
+}
+
+.new-chat-textbox{
+	display: none !important;
+}
+
+.new-chat-textbox-seleted{
+	display: block !important;
+}
+
+
+.online-user{
+    background-color: #00ff00;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+    float: right;
+}
+
+.offline-user{
+    background-color: #ff2f00;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+    float: right;
+}
