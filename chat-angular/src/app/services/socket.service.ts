@@ -53,7 +53,6 @@ export class SocketService {
 
 		let observable = new Observable(observer => {
 			this.socket.on('logout-response', (data) => {
-				console.log(data);
 				observer.next(data);    
 			});
 

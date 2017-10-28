@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,6 +21,25 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
 import { NewChatPage } from '../pages/new-chat/new-chat';
 import { SocketProvider } from '../providers/socket/socket';
+import { ShareProvider } from '../providers/share/share';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '1:725991726211:android:62f298703ce9ccdd',
+  },
+  'push': {
+    'sender_id': '725991726211',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+        'iconColor': '#343434'
+      }
+    }
+  }
+};
 
 @NgModule({
   declarations: [
@@ -37,6 +57,7 @@ import { SocketProvider } from '../providers/socket/socket';
     FormsModule,
     HttpModule,
     BrowserModule,
+    CloudModule.forRoot(cloudSettings),
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
   ],
@@ -59,7 +80,8 @@ import { SocketProvider } from '../providers/socket/socket';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     UserProvider,
-    SocketProvider
+    SocketProvider,
+    ShareProvider
   ]
 })
 export class AppModule { }

@@ -16,7 +16,7 @@ import { UserProvider } from '../../providers/user/user';
   templateUrl: 'message.html',
 })
 export class MessagePage {
-  private listMessage: any = [];
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,

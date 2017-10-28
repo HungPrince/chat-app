@@ -29,7 +29,6 @@ export class NewChatPage {
         this.userProvider.getMessages({ 'userId': success.userId, 'toUserId': this.user._id }).subscribe(
           res => {
             this.messages = res.messages;
-            console.log(this.messages);
           },
           error => {
             console.log(error);

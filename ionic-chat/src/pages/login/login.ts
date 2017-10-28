@@ -3,15 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { UserProvider } from './../../providers/user/user';
+import { ShareProvider } from './../../providers/share/share';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -27,6 +21,7 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public userProvider: UserProvider,
+    public shareProvider: ShareProvider,
     public storage: Storage) {
   }
 
@@ -35,12 +30,12 @@ export class LoginPage {
   }
 
   login() {
-    console.log(this.email, this.password);
-
+    this.shareProvider.presentLoading();
     this.userProvider.login({ 'username': this.email, 'password': this.password }).subscribe(
       response => {
+        this.shareProvider.dismissLoading();
         this.storage.set('user', response);
-        console.log(response);
+        this.shareProvider.user = response;
         this.navCtrl.push(HomePage);
       },
       error => {

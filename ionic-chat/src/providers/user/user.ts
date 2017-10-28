@@ -45,7 +45,6 @@ export class UserProvider {
 
   public getMessages(params): Observable<any> {
     let url = API_URL + 'getMessages';
-    console.log(params);
     return this.http.post(url, params).map(res => res.json());
   }
 

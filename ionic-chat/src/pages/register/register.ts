@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Validators, FormControl, FormBuilder } from '@angular/forms';
 import { UserProvider } from '../../providers/user/user';
 import { Storage } from '@ionic/storage';
 import { Http, Headers, RequestOptions } from '@angular/http';
-
-import { LoginPage } from '../login/login';
 
 declare var window: any;
 
